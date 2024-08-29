@@ -52,95 +52,6 @@
 
 
 
-DataSetAnalysis configure_data_set_analysis(const char* dataSetFilePathName)
-{
-	int lineCount = count_file_lines(dataSetFilePathName, MAX_NUM_FILE_LINES);
-	char **fileContents = read_file_contents(dataSetFilePathName, lineCount);
-	const char *delimiter = identify_delimiter(fileContents, lineCount);
-	
-	
-	int fieldCount = count_data_fields(fileContents[0]);
-	
-	//char **formattedFileContents = fileContents;
-	//char **formattedFileContents = allocate_memory_char_ptr_ptr(size_t strSize, lineCount);
-	
-	
-	
-	
-	
-	
-	
-	DataSetAnalysis configuredDataSet;
-	configuredDataSet.lineCount = lineCount;
-	configuredDataSet.fieldCount = fieldCount;
-	configuredDataSet.delimiter = delimiter;
-	configuredDataSet.dataSetHeader = fileContents[0];
-	configuredDataSet.fieldNameTypePairs =  capture_data_set_header_for_plotting(fileContents[0], fileContents, delimiter);
-	configuredDataSet.dataSetFilePathName = dataSetFilePathName;
-	
-	
-	
-	configuredDataSet.missingDataCount = count_missing_values(fileContents, lineCount, fieldCount, delimiter, fileContents[1]);
-	
-	
-	printf("\n\n\nconfiguredDataSet.missingDataCount: ");
-	for (int i = 0; i < lineCount; ++i)
-	{
-		printf("\n%d", configuredDataSet.missingDataCount[i]);
-	}
-	
-	
-	
-	configuredDataSet.dataSetFileContents = fileContents;
-	
-	return configuredDataSet;
-}
-
-
-/**
- * analyze_data_set
- *
- *
- *
- */
-const char *analyze_data_set(const char* dataSetFilePathName)
-{
-	int lineCount = count_file_lines(dataSetFilePathName, MAX_NUM_FILE_LINES);
-	char **fileContents = read_file_contents(dataSetFilePathName, lineCount);
-	const char *delimiter = identify_delimiter(fileContents, lineCount);
-	return delimiter;
-}
-
-
-/**
- * capture_and_prepare_data_set_contents
- *
- * Capture File Contents in an Array of Strings.
- *
- *
- */
-char **capture_and_prepare_data_set_contents(const char* dataSetFilePathName)
-{
-	int lineCount = count_file_lines(dataSetFilePathName, MAX_NUM_FILE_LINES);
-	char **fileContents = read_file_contents(dataSetFilePathName, lineCount);
-	
-	
-	int fieldCount = count_data_fields(fileContents[0]);
-	char **formattedFileContents = fileContents;
-	for(int i = 1; i < lineCount; i++)
-	{
-		//formattedFileContents[i] = prune_and_trim_problematic_characters_from_string(fileContents[i], delimiter, fieldCount);
-		
-	}
-	print_file_contents(formattedFileContents, lineCount);
-	
-	
-	return formattedFileContents;
-}
-
-
-
-
 void run_data_set(const char* dataSetFilePathName, char **fileContents, int lineCount, const char *delimiter)
 {
 	// ------------- Extract Data  -------------
@@ -226,12 +137,6 @@ void run_data_set(const char* dataSetFilePathName, char **fileContents, int line
 		char **dataSetParameter = separatedData[i];
 		
 		
-		if(dataSetParameter[i]) //Check this data set field
-		{
-			
-		}
-		
-		
 		// Path to the directory in which the plottable data fields will be located, the full pathnames of the data fields file's will be this string + the actual name of the file
 		//char *plottableDataFieldsDirectoryFilePath = combine_char_ptr("/", combine_char_ptr(fileName, "_Plottable_Field"));
 		//const char *plottableFieldsPathName = combine_char_ptr(dataDirectory, plottableDataFieldsDirectoryFilePath); // Full path for plottable data fields.
@@ -240,8 +145,6 @@ void run_data_set(const char* dataSetFilePathName, char **fileContents, int line
 		
 		/// Create a Parsed Data Fields File to Store the Current Fields's Header and Data Entries
 		const char *parsedDataFilePathName = combine_strings(parsedDataDirectory, combine_strings("/", dataSetFileName));
-		//parsedDataFilePathName = combine_char_ptr(parsedDataDirectory, parsedDataFilePathName);
-		
 		
 		
 		char *parameterParsed = allocate_memory_char_ptr(parameterCount);
@@ -257,9 +160,6 @@ void run_data_set(const char* dataSetFilePathName, char **fileContents, int line
 		
 		
 		/// Create a Parsed Data File to Store all the Parsed Data Files, Append File Contents at Each Loop Iteration
-		
-		
-		
 		
 		
 		
