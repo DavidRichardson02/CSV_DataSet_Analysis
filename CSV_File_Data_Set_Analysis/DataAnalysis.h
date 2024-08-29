@@ -15,6 +15,7 @@
 
 
 
+/// EARLY TESTING DataSetAnalysis Structure
 /**
  * DataSetAnalysis Structure: Represents the properties of the data set that are required for data
  * analysis and operations, but not necessarily important for the actual meaning of data. For example, the
@@ -70,36 +71,9 @@ typedef struct
 } DataSetAnalysis;
 
 
-/**
- * DataEntry Structure: Represents a single entry in a data set.
- *
- * This structure encapsulates the various attributes of a data entry that are relevant for
- * the capturing, formatting, and analysis analysis of data.
- * Each member variable is associated with a specific property of data entry.
- *
- * Struct for data entry properties:
- *      - int fieldCount: The number of fields in the data entry.
- *      - char **fieldValues: Array of strings storing the values of each field in the data entry.
- */
-typedef struct
-{
-	
-} DataEntry;
 
 
 
-
-
-
-DataSetAnalysis configure_data_set_analysis(const char* dataSetFilePathName);
-
-
-const char *analyze_data_set(const char* dataSetFilePathName);
-
-char **capture_and_prepare_data_set_contents(const char* dataSetFilePathName);
-
-
-char **format_data_set(const char* dataSetFilePathName);
 
 void run_data_set(const char* dataSetFilePathName, char **fileContents, int lineCount, const char *delimiter);
 
