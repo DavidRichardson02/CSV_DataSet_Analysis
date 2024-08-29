@@ -15,15 +15,13 @@ Include the necessary header files in your C project. Below is a basic example t
 #include "DataSetUtilities.h"
 #include "Integrators.h"
 #include "StatisticalMethods.h"
-#include "PlottingMethods.h"
-#include "DataAnalysis.h"
+
 
 int main() {
     const char *filePath = "path/to/your/csvfile.csv";
     char **fileContents = capture_and_prepare_data_set_contents(filePath);
     DataSetAnalysis dataSet = configure_data_set_analysis(filePath);
     run_data_set(filePath, fileContents, dataSet.lineCount, dataSet.delimiter);
-
     return 0;
 }
 ```
@@ -61,15 +59,6 @@ Defines functions for numerical integration, including methods like the Trapezoi
 
 Provides functions for generating and sampling datasets, computing statistical properties, integrating statistical distributions, and performing statistical tests to assess the normality of datasets.
 <br/>
-
-### PlottingMethods.h
-
-Offers helper functions for creating MATLAB scripts to plot various statistical models of a dataset, including histograms and Gaussian plots.
-<br/>
-
-### DataAnalysis.h
-
-Defines structures and functions for configuring and analyzing datasets, capturing and preparing dataset contents, formatting datasets, and running dataset analysis.
 
 
 
