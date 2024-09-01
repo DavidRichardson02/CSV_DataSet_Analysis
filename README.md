@@ -1,4 +1,23 @@
 # CSV File Data Set Analysis
+## Introduction
+A CSV (Comma-Separated Values) dataset is a structured text file format designed to represent tabular data, where information is arranged into rows and columns. 
+The underlying logic of a CSV dataset is based on a consistent and uniform structure where each data entry is parameterized by the same collection of fields, thereby ensuring a homogeneous description of data.
+
+At the highest level, a CSV dataset is viewed as a collection of data entries organized into rows, with each row representing a distinct observation, record, or unit of information. Within this structure, each column corresponds to a specific field, serving as a descriptor that is equally applicable to all data entries. 
+
+In other words, the columns define the attributes or parameters that describe the characteristics of each entry, meaning that every entry is described by the same set of fields, even if some values are missing or null. 
+As a result, the dataset is comprised of some number of data entries, each uniformly parameterized by the same collection of fields, ensuring consistency and coherence across the entire dataset.
+
+From a top-down perspective, the CSV dataset can be understood as a whole, composed of rows (data entries), where each row contains values that correspond to the predefined fields. Conversely, from a bottom-up perspective, the dataset is constructed by assembling individual fields into complete data entries, which collectively form the entire dataset.
+
+The underlying logic of a CSV dataset is rooted in this consistent structure, where data fields are uniformly applied to describe/parameterize each entry.
+
+It is through leveraging this consistent structure that this program is able to generalize the process of analyzing CSV datasets. 
+
+
+
+
+
 
 ## Overview
 This repository provides a comprehensive suite of C utilities and functions for standardizing, automating data extraction, and preprocessing CSV file contents for analysis. The program captures and formats CSV file contents, generates custom directories of files, extracts data, performs analysis, and generates MATLAB scripts for further visualization.
