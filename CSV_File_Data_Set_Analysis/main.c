@@ -12,11 +12,10 @@
 #include "GeneralUtilities.h"
 #include "StringUtilities.h"
 #include "FileUtilities.h"
-#include "DataSetUtilities.h"
+#include "AnalysisUtilities.h"
 #include "Integrators.h"
 #include "StatisticalMethods.h"
 #include "PlottingMethods.h"
-#include "DataAnalysis.h"
 #include "DebuggingUtilities.h"
 
 
